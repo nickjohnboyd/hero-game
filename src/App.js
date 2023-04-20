@@ -78,7 +78,9 @@ class App extends React.Component {
     this.state = {
       hero: this.heroes[0],
       maxHero: 11,
-      user: {}
+      user: {
+        name: "Test"
+      }
     };
   }
 
@@ -120,28 +122,35 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App flex flex-col items-center h-screen">
+        <div className="bg-blue-900 text-white w-full mb-6 p-2">
+          <h1 className="text-lg font-bold">
+            Welcome to 
+            <div className="text-xl">Book of Mormon Hero Game!</div>
+          </h1>
+        </div>
+        <p className="w-64 mb-6">
+          <span className="font-bold italic">It's simple: </span>
+          submit your name, age, gender, and get your hero!
+        </p>
 
-        <p className="text-red-500">Welcome to Hero Game!</p>
-        <p>It's simple: submit name, age, gender, and get your hero!</p>
-
-        <form onSubmit={this.handleSubmit}>
+        <form className="border-2 rounded-md border-gray-400 p-4" onSubmit={this.handleSubmit}>
           <div>
-            <label>Name: </label>
-            <input name="name" placeholder="name"></input>
+            <label className="font-bold">Name: </label>
+            <input className="border mb-2 rounded ml-1" name="name" placeholder="John Doe"></input>
           </div>
           <div>
-            <label>Age: </label>
-            <input name="age" placeholder="age" type="number"></input>
+            <label className="font-bold">Age: </label>
+            <input className="border mb-2 rounded ml-1" name="age" placeholder="23" type="number"></input>
           </div>
           <div>
-            <label>Gender: </label>
-            <input type="radio" name="gender" value="male"></input>
-            <label>Male </label>
-            <input type="radio" name="gender" value="female"></input>
-            <label>Female </label>
+            <label className="font-bold">Gender: </label>
+            <input className="ml-1" type="radio" name="gender" value="male"></input>
+            <label className="ml-1">Male </label>
+            <input className="ml-1" type="radio" name="gender" value="female"></input>
+            <label className="ml-1">Female </label>
           </div>
-          <input type="submit" value="Submit"></input>
+          <input className="mt-2 border border-gray-300 rounded px-1" type="submit" value="Submit"></input>
         </form>
 
         <Hero
@@ -152,7 +161,7 @@ class App extends React.Component {
 
          {/* <p>Or, generate random hero: </p>
         <button onClick={this.randomHero}>Random Hero</button> */}
-        
+                
       </div>
 
 
