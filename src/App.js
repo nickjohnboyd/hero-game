@@ -164,6 +164,8 @@ class App extends React.Component {
           Reset / Play Again
         </button>
 
+        <div className="text-sm fixed bottom-0 mb-3 italic">&copy; Nick Boyd 2023</div>
+
          {/* <p>Or, generate random hero: </p>
         <button onClick={this.randomHero}>Random Hero</button> */}
 
