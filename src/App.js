@@ -1,5 +1,7 @@
 import './App.css';
+import Hero from './components/Hero'
 import React from 'react';
+
 import abinadiImage from './images/abinadi.jpg'
 import almaImage from './images/alma-old.jpg'
 import almaYoungImage from './images/alma-young.jpg'
@@ -74,34 +76,20 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currHeroId: 0,
       hero: this.heroes[0],
       maxHero: 11,
       user: {}
     };
   }
 
-  newHero = () => {
-    let randomNum = Math.floor(Math.random() * this.state.maxHero)
-    // No Duplicates
-    if (randomNum == this.state.currHeroId) {
-      randomNum = Math.floor(Math.random() * this.state.maxHero)
-    }
-    this.setState(
-      {
-        currHeroId: randomNum,
-        hero: this.heroes[randomNum]
-      }
-    );
-  }
-
   componentDidUpdate() {
-    console.log("New Hero:", this.state.currHeroId);
+    console.log("New Hero:", this.state.hero.id);
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target.name.value);
+
     let target = event.target;
     let currHero = this.state.hero;
     let hero = this.heroes;
@@ -156,18 +144,31 @@ class App extends React.Component {
           <input type="submit" value="Submit"></input>
         </form>
 
-        {/* <p>Or, generate random hero: </p>
-        <button onClick={this.newHero}>Random Hero</button> */}
+        <Hero
+          hero={this.state.hero}
+          currHeroId={this.state.currHeroId}
+          user={this.state.user}
+        />
 
-        <p>Current Hero: {this.state.currHeroId}</p>
-        <div>
-          <img src={this.state.hero.img} className="hero-img"></img>
-        </div>
-
-        <h4>Congratulations {this.state.user.name} you are most like:</h4>
-        <h3>{this.state.hero.name}</h3>
+         {/* <p>Or, generate random hero: </p>
+        <button onClick={this.randomHero}>Random Hero</button> */}
         
       </div>
+
+
+
+      // randomHero = () => {
+      //   let randomNum = Math.floor(Math.random() * this.state.maxHero)
+      //   // No Duplicates
+      //   if (randomNum == this.state.currHeroId) {
+      //     randomNum = Math.floor(Math.random() * this.state.maxHero)
+      //   }
+      //   this.setState(
+      //     {
+      //       hero: this.heroes[randomNum]
+      //     }
+      //   );
+      // }
     );
   }
 }
