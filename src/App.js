@@ -78,9 +78,7 @@ class App extends React.Component {
     this.state = {
       hero: this.heroes[0],
       maxHero: 11,
-      user: {
-        name: "Test"
-      }
+      user: {}
     };
   }
 
@@ -137,7 +135,7 @@ class App extends React.Component {
         <form className="border-2 rounded-md border-gray-400 p-4" onSubmit={this.handleSubmit}>
           <div>
             <label className="font-bold">Name: </label>
-            <input className="border mb-2 rounded ml-1" name="name" placeholder="John Doe"></input>
+            <input className="border mb-2 rounded ml-1" name="name" placeholder="Moroni Jones"></input>
           </div>
           <div>
             <label className="font-bold">Age: </label>
@@ -159,9 +157,16 @@ class App extends React.Component {
           user={this.state.user}
         />
 
+        <button
+          className="mt-6 border border-gray-300 rounded px-1 text-blue-900" 
+          onClick={() => {window.location.reload(true);}}
+        >
+          Reset / Play Again
+        </button>
+
          {/* <p>Or, generate random hero: </p>
         <button onClick={this.randomHero}>Random Hero</button> */}
-                
+
       </div>
 
 
