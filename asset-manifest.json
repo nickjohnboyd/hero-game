@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hero-game/static/css/main.cb307d65.css",
-    "main.js": "/hero-game/static/js/main.361b27c2.js",
+    "main.js": "/hero-game/static/js/main.71076c0e.js",
     "static/js/787.9da676e7.chunk.js": "/hero-game/static/js/787.9da676e7.chunk.js",
     "static/media/alma-young.jpg": "/hero-game/static/media/alma-young.b5fa1eaaac97be5459e9.jpg",
     "static/media/alma-old.jpg": "/hero-game/static/media/alma-old.caced965a0ab0b8ac91a.jpg",
@@ -16,11 +16,11 @@
     "static/media/bro-jared.jpg": "/hero-game/static/media/bro-jared.456820bda730b0375a80.jpg",
     "index.html": "/hero-game/index.html",
     "main.cb307d65.css.map": "/hero-game/static/css/main.cb307d65.css.map",
-    "main.361b27c2.js.map": "/hero-game/static/js/main.361b27c2.js.map",
+    "main.71076c0e.js.map": "/hero-game/static/js/main.71076c0e.js.map",
     "787.9da676e7.chunk.js.map": "/hero-game/static/js/787.9da676e7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cb307d65.css",
-    "static/js/main.361b27c2.js"
+    "static/js/main.71076c0e.js"
   ]
 }
