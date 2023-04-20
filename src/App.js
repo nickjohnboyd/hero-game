@@ -10,6 +10,7 @@ import mormonImage from './images/mormon.jpg'
 import nephiImage from './images/nephi.jpg'
 import samuelImage from './images/samuel.jpeg'
 import sonsMosiahImage from './images/sons-mosiah.jpg'
+import sariahImage from './images/sariah.jpg'
 
 class App extends React.Component {
   heroes = [
@@ -62,15 +63,20 @@ class App extends React.Component {
       name: "The Sons of Mosiah",
       id: 9,
       img: sonsMosiahImage
+    },
+    {
+      name: "Sariah",
+      id: 10,
+      img: sariahImage
     }
   ];
-  
+
   constructor(props) {
     super(props);
     this.state = {
       currHeroId: 0,
       hero: this.heroes[0],
-      maxHero: 10,
+      maxHero: 11,
       user: {}
     };
   }
@@ -96,14 +102,28 @@ class App extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     console.log(event.target.name.value);
-    let target = event.target
+    let target = event.target;
+    let currHero = this.state.hero;
+    let hero = this.heroes;
+
+    if (target.gender.value == "female") currHero = hero[10];
+    else if (target.age.value >= 60) currHero = hero[1];
+    else if (target.age.value >= 50) currHero = hero[5];
+    else if (target.age.value >= 45) currHero = hero[6];
+    else if (target.age.value >= 40) currHero = hero[0];
+    else if (target.age.value >= 35) currHero = hero[8];
+    else if (target.age.value >= 30) currHero = hero[4];
+    else if (target.age.value >= 25) currHero = hero[3];
+    else if (target.age.value >= 20) currHero = hero[7];
+    else if (target.age.value >= 15) currHero = hero[9];
+    else if (target.age.value < 15) currHero = hero[2];
 
     this.setState(
       {
+        hero: currHero,
         user: {
           name: target.name.value,
           age: target.age.value,
-          height: target.height.value,
           gender: target.gender.value,
         }
       }
@@ -113,8 +133,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <p>Welcome to Hero Game!</p>
-        <p>It's simple: submit name, age, height, gender, and get your hero!</p>
+        <p>It's simple: submit name, age, gender, and get your hero!</p>
+
         <form onSubmit={this.handleSubmit}>
           <div>
             <label>Name: </label>
@@ -125,10 +147,6 @@ class App extends React.Component {
             <input name="age" placeholder="age" type="number"></input>
           </div>
           <div>
-            <label>Height (In): </label>
-            <input name="height" placeholder="height" type="number"></input>
-          </div>
-          <div>
             <label>Gender: </label>
             <input type="radio" name="gender" value="male"></input>
             <label>Male </label>
@@ -137,12 +155,18 @@ class App extends React.Component {
           </div>
           <input type="submit" value="Submit"></input>
         </form>
+
+        {/* <p>Or, generate random hero: </p>
+        <button onClick={this.newHero}>Random Hero</button> */}
+
+        <p>Current Hero: {this.state.currHeroId}</p>
         <div>
           <img src={this.state.hero.img} className="hero-img"></img>
         </div>
-        <h4>{this.state.hero.name}</h4>
-        <p>Current Hero: {this.state.currHeroId}</p>
-        <button onClick={this.newHero}>Click Me</button>
+
+        <h4>Congratulations {this.state.user.name} you are most like:</h4>
+        <h3>{this.state.hero.name}</h3>
+        
       </div>
     );
   }
