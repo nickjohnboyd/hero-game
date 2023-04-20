@@ -8,7 +8,7 @@ import broJaredImage from './images/bro-jared.jpg'
 import lehiImage from './images/lehi.jpg'
 import mormonImage from './images/mormon.jpg'
 import nephiImage from './images/nephi.jpg'
-import samuelImage from './images/samuel.jpg'
+import samuelImage from './images/samuel.jpeg'
 import sonsMosiahImage from './images/sons-mosiah.jpg'
 
 class App extends React.Component {
@@ -64,16 +64,23 @@ class App extends React.Component {
       img: sonsMosiahImage
     }
   ];
+  
   constructor(props) {
     super(props);
     this.state = {
       currHeroId: 0,
       hero: this.heroes[0],
-      maxHero: 4
+      maxHero: 10,
+      user: {}
     };
   }
+
   newHero = () => {
     let randomNum = Math.floor(Math.random() * this.state.maxHero)
+    // No Duplicates
+    if (randomNum == this.state.currHeroId) {
+      randomNum = Math.floor(Math.random() * this.state.maxHero)
+    }
     this.setState(
       {
         currHeroId: randomNum,
@@ -81,15 +88,59 @@ class App extends React.Component {
       }
     );
   }
+
   componentDidUpdate() {
     console.log("New Hero:", this.state.currHeroId);
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(event.target.name.value);
+    let target = event.target
+
+    this.setState(
+      {
+        user: {
+          name: target.name.value,
+          age: target.age.value,
+          height: target.height.value,
+          gender: target.gender.value,
+        }
+      }
+    );
   }
 
   render() {
     return (
       <div className="App">
         <p>Welcome to Hero Game!</p>
-        {/* <img src={this.state.hero.img}></img> */}
+        <p>It's simple: submit name, age, height, gender, and get your hero!</p>
+        <form onSubmit={this.handleSubmit}>
+          <div>
+            <label>Name: </label>
+            <input name="name" placeholder="name"></input>
+          </div>
+          <div>
+            <label>Age: </label>
+            <input name="age" placeholder="age" type="number"></input>
+          </div>
+          <div>
+            <label>Height (In): </label>
+            <input name="height" placeholder="height" type="number"></input>
+          </div>
+          <div>
+            <label>Gender: </label>
+            <input type="radio" name="gender" value="male"></input>
+            <label>Male </label>
+            <input type="radio" name="gender" value="female"></input>
+            <label>Female </label>
+          </div>
+          <input type="submit" value="Submit"></input>
+        </form>
+        <div>
+          <img src={this.state.hero.img} className="hero-img"></img>
+        </div>
+        <h4>{this.state.hero.name}</h4>
         <p>Current Hero: {this.state.currHeroId}</p>
         <button onClick={this.newHero}>Click Me</button>
       </div>
