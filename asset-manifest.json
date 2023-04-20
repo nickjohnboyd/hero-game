@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hero-game/static/css/main.570329d4.css",
-    "main.js": "/hero-game/static/js/main.754c791d.js",
+    "main.css": "/hero-game/static/css/main.cb307d65.css",
+    "main.js": "/hero-game/static/js/main.361b27c2.js",
     "static/js/787.9da676e7.chunk.js": "/hero-game/static/js/787.9da676e7.chunk.js",
     "static/media/alma-young.jpg": "/hero-game/static/media/alma-young.b5fa1eaaac97be5459e9.jpg",
     "static/media/alma-old.jpg": "/hero-game/static/media/alma-old.caced965a0ab0b8ac91a.jpg",
@@ -15,12 +15,12 @@
     "static/media/sons-mosiah.jpg": "/hero-game/static/media/sons-mosiah.7642885547bfb6210894.jpg",
     "static/media/bro-jared.jpg": "/hero-game/static/media/bro-jared.456820bda730b0375a80.jpg",
     "index.html": "/hero-game/index.html",
-    "main.570329d4.css.map": "/hero-game/static/css/main.570329d4.css.map",
-    "main.754c791d.js.map": "/hero-game/static/js/main.754c791d.js.map",
+    "main.cb307d65.css.map": "/hero-game/static/css/main.cb307d65.css.map",
+    "main.361b27c2.js.map": "/hero-game/static/js/main.361b27c2.js.map",
     "787.9da676e7.chunk.js.map": "/hero-game/static/js/787.9da676e7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.570329d4.css",
-    "static/js/main.754c791d.js"
+    "static/css/main.cb307d65.css",
+    "static/js/main.361b27c2.js"
   ]
 }
