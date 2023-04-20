@@ -122,7 +122,7 @@ class App extends React.Component {
     return (
       <div className="App">
 
-        <p>Welcome to Hero Game!</p>
+        <p className="text-red-500">Welcome to Hero Game!</p>
         <p>It's simple: submit name, age, gender, and get your hero!</p>
 
         <form onSubmit={this.handleSubmit}>
