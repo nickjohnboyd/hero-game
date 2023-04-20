@@ -1,12 +1,13 @@
 {
   "files": {
     "main.css": "/hero-game/static/css/main.570329d4.css",
-    "main.js": "/hero-game/static/js/main.8e020bc7.js",
+    "main.js": "/hero-game/static/js/main.754c791d.js",
     "static/js/787.9da676e7.chunk.js": "/hero-game/static/js/787.9da676e7.chunk.js",
     "static/media/alma-young.jpg": "/hero-game/static/media/alma-young.b5fa1eaaac97be5459e9.jpg",
     "static/media/alma-old.jpg": "/hero-game/static/media/alma-old.caced965a0ab0b8ac91a.jpg",
     "static/media/ammon.jpg": "/hero-game/static/media/ammon.45ae1b6a6d40fc962c11.jpg",
     "static/media/mormon.jpg": "/hero-game/static/media/mormon.5f744689d22fac27494f.jpg",
+    "static/media/sariah.jpg": "/hero-game/static/media/sariah.041aa8333e7c051e3957.jpg",
     "static/media/samuel.jpeg": "/hero-game/static/media/samuel.b6e8af0eaafbde4b03ac.jpeg",
     "static/media/lehi.jpg": "/hero-game/static/media/lehi.6d092361ee8457c4ecfa.jpg",
     "static/media/abinadi.jpg": "/hero-game/static/media/abinadi.c0bbc8232c7a22cf9bbf.jpg",
@@ -15,11 +16,11 @@
     "static/media/bro-jared.jpg": "/hero-game/static/media/bro-jared.456820bda730b0375a80.jpg",
     "index.html": "/hero-game/index.html",
     "main.570329d4.css.map": "/hero-game/static/css/main.570329d4.css.map",
-    "main.8e020bc7.js.map": "/hero-game/static/js/main.8e020bc7.js.map",
+    "main.754c791d.js.map": "/hero-game/static/js/main.754c791d.js.map",
     "787.9da676e7.chunk.js.map": "/hero-game/static/js/787.9da676e7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.570329d4.css",
-    "static/js/main.8e020bc7.js"
+    "static/js/main.754c791d.js"
   ]
 }
